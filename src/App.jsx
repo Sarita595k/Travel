@@ -1,6 +1,14 @@
 import { Packages } from "./Component/Packages"
 import { LandingPage } from "./Page/LandingPage"
 
+// import styled from "styled-components"
+// const Container = styled.div`
+// display:flex;
+// flex-direction:column;
+// justify-content:center;
+// align-items:center;
+// `
+
 const App = () => {
   return (<>
     <LandingPage />

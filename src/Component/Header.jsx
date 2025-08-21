@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
 import "./Style/Header.css"
+
+import { GrPrevious } from "react-icons/gr";
+import { GrNext } from "react-icons/gr";
+
 const CarouselContainer = styled.div`
 height:100vh;
 width:100%;
 overflow:hidden;
+position:relative;
 `
 const SlideWrapper = styled.div`
 display:flex;
@@ -60,25 +65,59 @@ text-align:center;
  font-weight:400;
  line-height:2rem;
 `
-const BtnContainer = styled.div`
+const Logo = styled.img`
+height:10%;
 position:absolute;
-display:flex;
-gap:3rem;
-justify-content:space-between;
-top:50%;
+top:2rem;
+left:3rem;
+z-index:13;
 `
-const Button = styled.button`
-
-`
-
 const PrevBtn = styled.button`
+position:absolute;
+top:50%;
+left:0;
 cursor:pointer;
 background-color:rgba(19, 53, 123, 0.6);
 color:rgba(119, 112, 112, 0.7);
 border:none;
 border-radius:0 25px 25px 0;
 font-size:2rem;
-padding:.6rem 2rem .6rem 2rem;
+text-align:center;
+padding:.7rem 1.2rem .7rem 1rem;
+
+display:flex;
+align-items:center;
+justify-content:center;
+transition:all .3s ease-in-out;
+
+&&:hover{
+background-color:rgb(19, 53, 123);
+}
+`
+
+const NextBtn = styled.button`
+position:absolute;
+top:50%;
+right:0;
+transfrom:translateY(-50%);
+cursor:pointer;
+background-color:rgba(19, 53, 123, 0.6);
+color:rgba(119, 112, 112, 0.7);
+border:none;
+border-radius:25px 0 0 25px;
+font-size:2rem;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:.7rem 1rem .7rem 1.2rem;
+transition:all .3s ease-in-out;
+
+
+&&:hover{
+background-color:rgb(19, 53, 123);
+}
 `
 const carouselImg = [{
     id: 1,
@@ -134,10 +173,11 @@ export const Header = () => {
                 </ImageWrapper>)
                 )}
             </SlideWrapper>
-            <BtnContainer>
-                <PrevBtn onClick={prevSlide}>❮</PrevBtn>
-                <Button onClick={nextSlide}>❯</Button>
-            </BtnContainer>
+            {/* <BtnContainer> */}
+            <Logo src="/Logo/logo.png" alt="logo" />
+            <PrevBtn onClick={prevSlide}><GrPrevious /></PrevBtn>
+            <NextBtn onClick={nextSlide}><GrNext /></NextBtn>
+            {/* </BtnContainer> */}
         </CarouselContainer >
     )
 }

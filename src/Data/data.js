@@ -1,0 +1,53 @@
+const data = [{
+    id: 1,
+    image: "",
+    title: "royal rajasthan sojourn",
+    subTitle: "hot deals",
+    stars: 5,
+    duration: "6 nights/7days",
+    placesCovered: "jaipur, pushkar,udaipur,jodhpur,jaisalmer",
+    startingDestination: "jaipur",
+    price: 13499,
+    location: "rajasthan",
+    days: 7,
+    persons: 4
+}, {
+    id: 2,
+    image: "",
+    title: "magnificent udaipur & mount abu",
+    subTitle: "hot deals",
+    stars: 5,
+    duration: "4 nights/5days",
+    placesCovered: "udaipur,mount abu",
+    startingDestination: "udaipur",
+    price: 6250,
+    location: "udaipur",
+    days: 5,
+    persons: 4
+}, {
+    id: 3,
+    image: "",
+    title: "golden sands of jaisalmer",
+    subTitle: "hot deals",
+    stars: 5,
+    duration: "3 nights/ 4days",
+    placesCovered: "jaisalmer,sam sand dunes,kuldhara village",
+    startingDestination: "jaisalmer",
+    price: 7999,
+    location: "rajasthan",
+    days: 4,
+    persons: 4
+}, {
+    id: 3,
+    image: "",
+    title: "golden sands of jaisalmer",
+    subTitle: "hot deals",
+    stars: 5,
+    duration: "3 nights/ 4days",
+    placesCovered: "jaisalmer,sam sand dunes,kuldhara village",
+    startingDestination: "jaisalmer",
+    price: 7999,
+    location: "rajasthan",
+    days: 4,
+    persons: 4
+}]

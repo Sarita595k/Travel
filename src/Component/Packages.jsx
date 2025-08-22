@@ -1,6 +1,10 @@
 import { data } from "../Data/data.js"
 import styled from "styled-components"
+import "./Style/Package.css"
 import { IoMdStar } from "react-icons/io";
+import { IoLocationOutline } from "react-icons/io5";
+import { SlCalender } from "react-icons/sl";
+import { GoPersonFill } from "react-icons/go";
 
 const MainContainer = styled.div`
 width:100%;
@@ -12,7 +16,7 @@ align-items:center;
 
 const Container = styled.div`
 width:100%;
-height:100vh;
+height:max-content;
 display:flex;
 flex-wrap:wrap;
 align-items:center;
@@ -29,22 +33,61 @@ background-color:#f2f2f2;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
+margin-bottom:2rem;
 `
+const ImageWrapper = styled.div`
+  position: relative;
+  height: 16rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
 
+  
+  &:hover img {
+    transform: scale(1.4);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    height: 0%;
+    transform:translate(-50%,-50%);
+    background: #757575; /* grey overlay with transparency */
+    z-index: 1;
+    opacity: 0;
+    transition: 0.7s;
+  }
+
+  &:hover::before{
+  opacity:.5;
+  top:0%;
+  left:0%;
+  height:100%;
+  width:100%;
+  transform:translate(0,0);
+//   background-color:rgba(19, 53, 123, 0.5);
+  }
+`
 const PackImage = styled.img`
-// position:relative;
 height:16rem;
 width:100%;
 object-fit:cover;
 border-radius:15px 15px 0 0;
+transition:all .7s ease-in-out;
 `
 const LocationDetails = styled.div`
 position:absolute;
+width:100%;
 left:50%;
 transform:translateX(-50%);
 display:flex;
 flex-direction:column;
 align-items:center;
+justify-content:space-between;
+z-index:5;
 `
 const Price = styled.button`
 font-size:1rem;
@@ -58,6 +101,28 @@ padding:.8rem;
 `
 
 const Location = styled.div`
+z-index:23;
+position:absolute;
+top:42%;
+width:100%;
+display:flex;
+justify-content:space-evenly;
+background-color:rgba(35,34,34,0.6);
+border:1px solid white;
+`
+const LocationP = styled.button`
+padding:.7rem;
+font-size:0.8rem;
+font-family:"Roboto", sans-serif;
+font-weight:300;
+text-transform:capitalize;
+color:white;
+background-color:transparent;
+border:none;
+
+&:nth-child(2){
+border:1px solid white;
+}
 `
 const CardDetails = styled.div`
 padding:0 .7rem;
@@ -112,20 +177,26 @@ cursor:pointer;
 export const Packages = () => {
     return (
         <MainContainer>
-            <h4>Awesome packages</h4>
-            <h1>Rajasthan tour packages</h1>
+            <div className="container">
+                <hr />
+                <h4 className="mainContainerHeading">Awesome packages</h4>
+                <hr />
+            </div>
+            <h1 className="mainHeading">Rajasthan tour packages</h1>
             <Container>
                 {data.map((element, index) => (
                     <Card key={index}>
-                        <PackImage src={element.image} alt={element.title} />
+                        <ImageWrapper>
+                            <PackImage src={element.image} alt={element.title} />
+                        </ImageWrapper>
                         <LocationDetails>
                             <Price>₹ {element.price}.PP</Price>
-                            <Location>
-                                <p>{element.location}</p>
-                                <p>{element.days}</p>
-                                <p>{element.persons}</p>
-                            </Location>
                         </LocationDetails>
+                        <Location>
+                            <LocationP><IoLocationOutline style={{ paddingRight: ".2rem" }} /> {element.location}</LocationP>
+                            <LocationP><SlCalender style={{ paddingRight: ".2rem" }} /> {element.days} days</LocationP>
+                            <LocationP><GoPersonFill style={{ paddingRight: ".2rem" }} /> {element.persons} person</LocationP>
+                        </Location>
                         <CardDetails>
                             <H1>{element.title}</H1>
                             <H5>{element.subTitle}</H5>

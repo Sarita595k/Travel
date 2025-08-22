@@ -1,4 +1,5 @@
 import { Packages } from "./Component/Packages"
+import { Testimonial } from "./Component/Testimonial"
 import { LandingPage } from "./Page/LandingPage"
 
 // import styled from "styled-components"
@@ -13,6 +14,7 @@ const App = () => {
   return (<>
     <LandingPage />
     <Packages />
+    <Testimonial />
   </>)
 }
 

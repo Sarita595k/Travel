@@ -27,7 +27,8 @@ gap:1rem;
 const Card = styled.div`
 position:relative;
 height:32rem;
-flex:0 0 28%;
+width:28%;
+// flex:28%;
 border-radius:15px;
 background-color:#f2f2f2;
 display:flex;

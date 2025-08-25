@@ -41,9 +41,10 @@ export const Footer = () => {
             </div>
             <Info>
                 <Heading>get in touch</Heading>
-                <H4><FaHouseChimney style={{ paddingRight: ".7rem" }} />9 First Floor Main Rajapuri Road Opposite Sector 5 Uttam Nagar, Dwarka New Delhi 110059</H4>
+                <H4><FaHouseChimney style={{ paddingRight: ".7rem" }} />lorem khsdkjh mnhjn sdjbsd sdjkhnkjsdm jhjs jhs sd 1765617
+                </H4>
                 <H4><SlEnvolope style={{ paddingRight: ".7rem" }} /> info@prebookholidays.com </H4>
-                <H4><FaPhone style={{ paddingRight: ".7rem" }} /> +91-8377924630</H4>
+                <H4><FaPhone style={{ paddingRight: ".7rem" }} /> +91-8989898998</H4>
             </Info>
             <div>
                 <a href="tel:+917303473668">
